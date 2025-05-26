@@ -116,7 +116,7 @@ main {
   margin: 40px 0 20px;
 }
 
-main h1:not(.intro):not(.komanda) {
+main h1:not(.intro):not(.komanda):not(.projektai) {
   color: #4a5568;
   font-size: 1.2rem;
   line-height: 1.8;
@@ -216,6 +216,7 @@ main img {
   text-align: center;
   box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
   font-size: 1.3em;
+  color: white;
 }
 
 .button-download-cv:hover {
@@ -226,7 +227,6 @@ main img {
 .button-download-cv a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .komanda {
@@ -271,4 +271,83 @@ main img {
   grid-column: 2/2;
   grid-row: 3/3;
   text-align: center;
+}
+
+.projektai {
+  color: #2d3748;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 80px 0 20px;
+  font-weight: bold;
+}
+
+.project-button {
+  background-color: #4299e1;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
+}
+
+.project-button:hover {
+  background-color: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
+}
+
+.project-grid-div-1 {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.project-grid-div-1 h1 {
+  color: #2d3748;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.project-grid {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-github {
+  background-color: #333;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button-github:hover {
+  background-color: #24292e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.button-github a {
+  color: white;
+  text-decoration: none;
 }
