@@ -1,1 +1,1 @@
-# Site for our company
+# <div align="center">Site for our company</div>
