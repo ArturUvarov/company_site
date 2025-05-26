@@ -1,1 +1,1 @@
-# company_site
+# Site for our company
