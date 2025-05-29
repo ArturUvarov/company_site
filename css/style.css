@@ -1,8 +1,26 @@
+:root {
+  --primary: #4299e1;
+  --primary-dark: #3182ce;
+  --secondary: #209978;
+  --secondary-dark: #17795e;
+  --text-dark: #2d3748;
+  --text-light: #4a5568;
+  --white: #ffffff;
+  --bg-light: #f5f7fa;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 20px rgba(0, 0, 0, 0.15);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 40px;
+  --transition-default: all 0.3s ease;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f7fa;
+  background-color: var(--bg-light);
   box-sizing: border-box;
 }
 
@@ -18,53 +36,53 @@ body {
   object-fit: cover;
 }
 
+.section-title {
+  color: #2d3748;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
 a {
   color: #007bff;
   text-decoration: none;
 }
 
-.div-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+.intro {
+  color: #2d3748;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 40px 0 20px;
 }
 
-.div-nav h1 {
+.team .intro {
   color: #2d3748;
-  font-size: 24px;
-  margin: 0;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: bold;
+}
+
+.projects {
+  color: #2d3748;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 80px 0 20px;
+  font-weight: bold;
+}
+
+.team-title {
+  color: #2d3748;
+  font-size: 2.5em;
+  text-align: center;
+  margin: 40px 0 20px;
+  font-weight: bold;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-}
-
-.dropbtn {
-  background-color: #4299e1;
-  color: white;
-  padding: 12px 30px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
-}
-
-.dropbtn:hover {
-  background-color: #3182ce;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
 }
 
 .dropdown-content {
@@ -102,21 +120,20 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+/*------------------------------------------------------*/
+
+/* Main */
 
 main {
-  padding: 100px 40px 40px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 100px 40px 40px;
 }
 
-.intro {
-  color: #2d3748;
-  font-size: 2.5rem;
-  text-align: center;
-  margin: 40px 0 20px;
-}
-
-main h1:not(.intro):not(.komanda):not(.projektai) {
+main
+  h1:not(.intro):not(.team):not(.projects):not(.team-title):not(
+    .section-title
+  ) {
   color: #4a5568;
   font-size: 1.2rem;
   line-height: 1.8;
@@ -125,6 +142,205 @@ main h1:not(.intro):not(.komanda):not(.projektai) {
   margin: 0 auto 60px;
   font-weight: normal;
 }
+
+main img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+/*-----------------------------------------------------*/
+
+/* Nav */
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/*-----------------------------------------------------*/
+
+/* Buttons */
+
+.dropbtn {
+  background-color: #4299e1;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
+}
+
+.dropbtn:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
+}
+
+.button {
+  position: relative;
+  width: 150px;
+  height: 47px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--secondary-dark);
+  background-color: var(--secondary);
+  overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--secondary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.button:hover {
+  background: #17795e;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #146c54;
+}
+
+.button:active {
+  border: 1px solid #146c54;
+}
+
+.project-button {
+  background-color: #4299e1;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
+}
+
+.project-button:hover {
+  background-color: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.button-icon {
+  height: 47px;
+  display: flex;
+  border: 3px var(--white) solid;
+  cursor: pointer;
+}
+
+.icon {
+  background-color: #fff;
+  padding: 10px 10px 5px 10px;
+}
+
+.icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.cube {
+  transition: all 0.4s;
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 15px;
+}
+
+.button-icon:hover {
+  border-color: #ff98a2;
+}
+
+.button-icon:hover .cube {
+  transform: rotateX(90deg);
+}
+
+.side {
+  position: absolute;
+  height: 47px;
+  width: 200px;
+  display: flex;
+  font-size: 0.8em;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.top {
+  background: #ff98a2;
+  color: #fff;
+  transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+}
+
+.front {
+  background: #222229;
+  color: #fff;
+  transform: translate3d(0, 0, 1em);
+}
+
+/* ----------------------------------------------------*/
+
+/* Grid */
 
 .grid {
   display: grid;
@@ -141,10 +357,35 @@ main h1:not(.intro):not(.komanda):not(.projektai) {
 .grid-div-2 {
   grid-column: 1/2;
   grid-row: 2/2;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 20px;
+  background-color: white;
 }
 
-.grid-div-2 {
-  grid-column: 1/2;
+.grid-div-5 {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  text-align: center;
+}
+
+.grid-div-5 img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid-div-5 img {
+  width: 100%;
+  height: auto;
+  border-radius: 40%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-div-6 {
+  grid-column: 2/2;
   grid-row: 2/2;
   border: none;
   border-radius: 8px;
@@ -152,6 +393,18 @@ main h1:not(.intro):not(.komanda):not(.projektai) {
   width: 100%;
   padding: 20px;
   background-color: white;
+}
+
+.grid-div-7 {
+  grid-column: 2/2;
+  grid-row: 3/3;
+  text-align: center;
+}
+
+.grid-div-8 {
+  grid-column: 3/3;
+  grid-row: 1/1;
+  text-align: center;
 }
 
 .grid-div-1 img {
@@ -195,108 +448,10 @@ main h1:not(.intro):not(.komanda):not(.projektai) {
   font-size: 1.5em;
 }
 
-main img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
-.button-download-cv {
-  padding: 12px 24px;
-  background-color: #4299e1;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 200px;
-  display: inline-block;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
-  font-size: 1.3em;
-  color: white;
-}
-
-.button-download-cv:hover {
-  background-color: #3182ce;
-  transform: translateY(-2px);
-}
-
-.button-download-cv a {
-  color: white;
-  text-decoration: none;
-}
-
-.komanda {
-  color: #2d3748;
-  font-size: 2.5em;
-  text-align: center;
-  margin: 40px 0 20px;
-  font-weight: bold;
-}
-
-.grid-div-5 {
-  grid-column: 2/2;
-  grid-row: 1/1;
-  text-align: center;
-}
-
-.grid-div-5 img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.grid-div-5 img {
-  width: 100%;
-  height: auto;
-  border-radius: 40%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.grid-div-6 {
-  grid-column: 2/2;
-  grid-row: 2/2;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  padding: 20px;
-  background-color: white;
-}
-
-.grid-div-7 {
-  grid-column: 2/2;
-  grid-row: 3/3;
-  text-align: center;
-}
-
-.projektai {
-  color: #2d3748;
-  font-size: 2.5em;
-  text-align: center;
-  margin: 80px 0 20px;
-  font-weight: bold;
-}
-
-.project-button {
-  background-color: #4299e1;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(66, 153, 225, 0.3);
-}
-
-.project-button:hover {
-  background-color: #3182ce;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
+.project-grid {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 .project-grid-div-1 {
@@ -315,39 +470,4 @@ main img {
   text-align: center;
   font-weight: bold;
   line-height: 1.2;
-}
-
-.project-grid {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-.button-container {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.button-github {
-  background-color: #333;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.button-github:hover {
-  background-color: #24292e;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.button-github a {
-  color: white;
-  text-decoration: none;
 }
